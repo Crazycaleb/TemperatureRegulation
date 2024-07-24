@@ -1,0 +1,129 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!43 &4300000
+Mesh:
+  m_Name: mech(Clone) 0
+  serializedVersion: 8
+  m_SubMeshes:
+  - serializedVersion: 2
+    firstByte: 0
+    indexCount: 36
+    topology: 0
+    baseVertex: 0
+    firstVertex: 0
+    vertexCount: 24
+    localAABB:
+      m_Center: {x: 4.284084E-08, y: -0.021534, z: 0.03364632}
+      m_Extent: {x: 0.04485594, y: 0.02153406, z: 0.2166978}
+  m_Shapes:
+    vertices: []
+    shapes: []
+    channels: []
+    fullWeights: []
+  m_BindPose: []
+  m_BoneNameHashes:
+  m_RootBoneNameHash: 0
+  m_MeshCompression: 0
+  m_IsReadable: 1
+  m_KeepVertices: 1
+  m_KeepIndices: 1
+  m_IndexFormat: 0
+  m_IndexBuffer: 000001000200000002000300040005000600040006000700080009000a0008000a000b000c000d000e000c000e000f00100011001200100012001300140015001600140016001700
+  m_Skin: []
+  m_VertexData:
+    m_CurrentChannels: 25
+    m_VertexCount: 24
+    m_Channels:
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 3
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 12
+      format: 0
+      dimension: 2
+    - stream: 0
+      offset: 20
+      format: 0
+      dimension: 2
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    m_DataSize: 672
+    _typelessdata: e7ba373d226830bd949b2e3e26ca2d3f6016ec3c63d7533e7490513e8bcd363dd7a380331c2d803ecac72d3f62def23b0000803bab0b513e74cd36bdd7a380331c2d803e4c64283fa2def23b0000803bb397903bd0ba37bd226830bd949b2e3eaa5f283f98f2eb3c63d7533e0000803b8bcd363dd7a380331c2d803ee061303f64def23be444793fb10bd13e8bcd363dd7a38033dc713bbe3c55303f7860e53d4c00803bb10bd13e74cd36bdd7a38033dc713bbe66a9373f7860e53d0000803b7f90553e74cd36bdd7a380331c2d803e66a9373fa4def23be344793f7f90553e8bcd363dd7a38033dc713bbebcc12d3f1c37fa3dd397903ba98a353fe7ba373d226830bdc7a83abec4c52d3f7c60e53d0000803bc7dd1c3fd0ba37bd226830bdc7a83abe465b283f7c60e53d7290513ec7dd1c3f74cd36bdd7a38033dc713bbe3d5e283f402efa3daa0b513ea98a353fe7ba373d226830bdc7a83abec4c52d3f7c60e53d760f7f3f7f90513ee7ba373d226830bd949b2e3e26ca2d3f6016ec3c63d7533e7490513ed0ba37bd226830bd949b2e3eaa5f283f98f2eb3c63d7533e0000803bd0ba37bd226830bdc7a83abe465b283f7c60e53d760f7f3f6401803bd0ba37bd226830bd949b2e3eaa5f283f98f2eb3c158a4b3fb10bd33e74cd36bdd7a380331c2d803e09c7253f3153233cdd44793fd031023f74cd36bdd7a38033dc713bbea4c1253f7c60e53d0000803bd031023fd0ba37bd226830bdc7a83abe465b283f7c60e53d1b3eb83bb10bd33ee7ba373d226830bdc7a83abec4c52d3f7c60e53d61d4783fd031033f8bcd363dd7a38033dc713bbe3c55303f7860e53dd844793fc7dd1b3f8bcd363dd7a380331c2d803ee061303f64def23b0000803bc7dd1b3fe7ba373d226830bd949b2e3e26ca2d3f6016ec3c20eb3a3ed031033f
+  m_CompressedMesh:
+    m_Vertices:
+      m_NumItems: 0
+      m_Range: 0
+      m_Start: 0
+      m_Data:
+      m_BitSize: 0
+    m_UV:
+      m_NumItems: 0
+      m_Range: 0
+      m_Start: 0
+      m_Data:
+      m_BitSize: 0
+    m_Normals:
+      m_NumItems: 0
+      m_Range: 0
+      m_Start: 0
+      m_Data:
+      m_BitSize: 0
+    m_Tangents:
+      m_NumItems: 0
+      m_Range: 0
+      m_Start: 0
+      m_Data:
+      m_BitSize: 0
+    m_Weights:
+      m_NumItems: 0
+      m_Data:
+      m_BitSize: 0
+    m_NormalSigns:
+      m_NumItems: 0
+      m_Data:
+      m_BitSize: 0
+    m_TangentSigns:
+      m_NumItems: 0
+      m_Data:
+      m_BitSize: 0
+    m_FloatColors:
+      m_NumItems: 0
+      m_Range: 0
+      m_Start: 0
+      m_Data:
+      m_BitSize: 0
+    m_BoneIndices:
+      m_NumItems: 0
+      m_Data:
+      m_BitSize: 0
+    m_Triangles:
+      m_NumItems: 0
+      m_Data:
+      m_BitSize: 0
+    m_UVInfo: 0
+  m_LocalAABB:
+    m_Center: {x: 4.284084E-08, y: -0.021534, z: 0.03364632}
+    m_Extent: {x: 0.04485594, y: 0.02153406, z: 0.2166978}
+  m_MeshUsageFlags: 0
+  m_BakedConvexCollisionMesh:
+  m_BakedTriangleCollisionMesh:
+  m_MeshOptimized: 1
