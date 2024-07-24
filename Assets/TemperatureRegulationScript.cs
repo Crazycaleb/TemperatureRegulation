@@ -13,6 +13,7 @@ public class TemperatureRegulationScript : MonoBehaviour
    public KMAudio Audio;
    public KMNeedyModule Needy;
    public Animator animator;
+   public Light light;
    private const string SwitchUp = "SwitchUpBool";
    private const string NeedyActive = "NeedyActive";
 
@@ -45,12 +46,9 @@ public class TemperatureRegulationScript : MonoBehaviour
       ModuleId = ModuleIdCounter++;
       Needy.OnNeedyActivation += delegate
       {
-         if (isNeedyDeactivated)
-         {
+         if (isNeedyDeactivated) {
             Needy.HandlePass();
-         }
-         else
-         {
+         } else {
             OnNeedyActivate();
             StartCoroutine(timer());
          }
@@ -59,75 +57,57 @@ public class TemperatureRegulationScript : MonoBehaviour
       handle.OnInteract += delegate () { HandleInteract(); return false; };
    }
 
-   void OnNeedyActivate()
-   {
+   void OnNeedyActivate() {
       isNeedyActive = true;
-      int number = Rnd.Range(0,2);
-      if (number == 0){
-         isUp = false;
-      }
-      else{
-         isUp = true;
-      }
+      isUp = Rnd.Range(0,2) == 0;
       animator.SetBool(NeedyActive, isNeedyActive);
-      
    }
 
-   private IEnumerator timer(){
+   private IEnumerator timer() {
       while(true){
-      if (isNeedyDeactivated){
-         yield return null;
-      }
-      
-      else{
-         if (isUp == true)
-            {
-            switchTimer += 0.1f;
+         if (isNeedyDeactivated){
+            yield return null;
+         } else {
+            switchTimer += isUp ? 0.1f : -0.1f;
+            if (switchTimer >= 25.0f) {
+               redBarControl.SetActive(true);
+               blueBarControl.SetActive(false);
+               redBarControl.transform.localScale = new Vector3(1f, 1f, lerp(0.48f, (switchTimer - 25f) / 25f)); //Quaternion.Slerp(minScale, redMaxScale, (switchTimer - 25f)/25f);
+               light.color = new Color((switchTimer - 25f)/25f, 0, 0, 1);
             }
-         else
-            {
-            switchTimer -= 0.1f;
-            }
-         if (switchTimer >= 25.0f){
-            redBarControl.SetActive(true);
-            blueBarControl.SetActive(false);
-            /*if(isUp == true){
-               redBarControl.transform.localScale = new Vector3(0f,0f, currentPos += 0.01f);
-            }
-            if(isUp == false){
-               redBarControl.transform.localScale = new Vector3(0f, 0f, currentPos -= 0.01f);
-            }*/
-         }
-         else{
+            else {
                redBarControl.SetActive(false);
                blueBarControl.SetActive(true);
-               blueBarControl.transform.localScale = new Vector3(0f, 0f, 0.01f);
+               blueBarControl.transform.localScale = new Vector3(1f, 1f, lerp(0.51f, 1 - switchTimer / 25f)); //Quaternion.Slerp(blueMaxScale, minScale, switchTimer/25f);
+               light.color = new Color(0, 1f - switchTimer/25f, 1f - switchTimer/25f, 1);
             }
-         if (switchTimer < 0.0f || switchTimer > 49.9f)
-            {
-            GetComponent<KMNeedyModule>().HandleStrike();
-            GetComponent<KMNeedyModule>().HandlePass();
-            isNeedyActive = false;
-            isNeedyDeactivated = true;
+            if (switchTimer < 0.1f || switchTimer > 49.9f) {
+               GetComponent<KMNeedyModule>().HandleStrike();
+               GetComponent<KMNeedyModule>().HandlePass();
+               isNeedyActive = false;
+               isNeedyDeactivated = true;
+               light.color = new Color(0, 0, 0, 1);
             }
          }
          yield return new WaitForSeconds(0.1f);
       }
    }
 
-   void OnDestroy()
-   {
+   public float lerp(float max, float time) {
+      return max * time;
+   }
+
+   void OnDestroy() {
       //Shit you need to do when the bomb ends
       isNeedyActive = false;
    }
 
-   void Start()
-   {
+   void Start() {
       // Initialize your module here
       Debug.LogFormat("[Temperature Regulation #{0}] Needy initiated.", ModuleId);
    }
 
-   void Update(){
+   void Update() {
       animator.SetBool(SwitchUp, isUp);
       if (isNeedyActive)
       {
@@ -139,14 +119,8 @@ public class TemperatureRegulationScript : MonoBehaviour
       }
    }
 
-   void HandleInteract()
-   {
-      if (isUp == true){
-         isUp = false;
-      }
-      else{
-         isUp = true;
-      }
+   void HandleInteract() {
+      isUp = !isUp;
    }
 
    public void OnNeedyTimerExpired()

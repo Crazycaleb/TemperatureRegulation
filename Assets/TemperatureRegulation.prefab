@@ -171,9 +171,7 @@ GameObject:
   - component: {fileID: 4878687803394906}
   - component: {fileID: 33835703546746056}
   - component: {fileID: 23838367621654524}
-  - component: {fileID: 114680592418930202}
-  - component: {fileID: 114730630346963880}
-  - component: {fileID: 114123901066657426}
+  - component: {fileID: 108251995111446360}
   m_Layer: 0
   m_Name: LightGlow
   m_TagString: Untagged
@@ -976,7 +974,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1387868144830230}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -0.02148515, y: 0.02204686, z: -0.05672891}
+  m_LocalPosition: {x: -0.02148515, y: 0.0344, z: -0.05672891}
   m_LocalScale: {x: 0.1762796, y: 0.1762796, z: 0.1762796}
   m_Children: []
   m_Father: {fileID: 4796660266098002}
@@ -1836,6 +1834,42 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!108 &108251995111446360
+Light:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1387868144830230}
+  m_Enabled: 1
+  serializedVersion: 8
+  m_Type: 2
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Intensity: 3
+  m_Range: 0.035
+  m_SpotAngle: 30
+  m_CookieSize: 10
+  m_Shadows:
+    m_Type: 0
+    m_Resolution: -1
+    m_CustomResolution: -1
+    m_Strength: 1
+    m_Bias: 0.05
+    m_NormalBias: 0.4
+    m_NearPlane: 0.2
+  m_Cookie: {fileID: 0}
+  m_DrawHalo: 1
+  m_Flare: {fileID: 0}
+  m_RenderMode: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_Lightmapping: 4
+  m_AreaSize: {x: 1, y: 1}
+  m_BounceIntensity: 1
+  m_ColorTemperature: 6570
+  m_UseColorTemperature: 0
+  m_ShadowRadius: 0
+  m_ShadowAngle: 0
 --- !u!114 &114005060603752914
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1886,17 +1920,6 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1249658710993760}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &114123901066657426
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1387868144830230}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 0}
@@ -2237,17 +2260,6 @@ MonoBehaviour:
   m_Script: {fileID: 0}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &114680592418930202
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1387868144830230}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114690258803103514
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2263,22 +2275,12 @@ MonoBehaviour:
   Audio: {fileID: 114960229496981458}
   Needy: {fileID: 114952533401128156}
   animator: {fileID: 95109155183989112}
+  light: {fileID: 108251995111446360}
   handle: {fileID: 114605792476723220}
   topColor: {fileID: 2100000, guid: 3787143041e944a459438fa4d0f09f6e, type: 2}
   bottomColor: {fileID: 2100000, guid: 39fe0f00bbc41644187d2d16401a5aff, type: 2}
-  redBarControl: {fileID: 1833036795339450}
-  blueBarControl: {fileID: 1969157140583164}
---- !u!114 &114730630346963880
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1387868144830230}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  redBarControl: {fileID: 1969157140583164}
+  blueBarControl: {fileID: 1833036795339450}
 --- !u!114 &114777176710402240
 MonoBehaviour:
   m_ObjectHideFlags: 1
